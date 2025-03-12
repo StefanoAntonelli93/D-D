@@ -22,4 +22,5 @@ public class Token {
 
     @OneToOne(mappedBy = "token")
     private User user;
+
 }
