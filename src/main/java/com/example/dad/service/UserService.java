@@ -20,12 +20,22 @@ public class UserService {
         return repo.findAll();
     }
 
-    public Optional<User> getUsername(String username) {
-        return repo.findByUsername(username);
+    public Optional<User> getUserById(Long id) {
+        return repo.findById(id);
     }
 
-    public void addUser(User user) {
+    public User getUsernameAndEmail(String username, String email) {
+        return repo.findByUsernameAndEmail(username, email);
+    }
+
+    public boolean registerUser(String username, String email) {
+        if (repo.existsByUsername(username) || repo.existsByEmail(email)) {
+            return false;
+        }
+
+        User user = new User(username, email);
         repo.save(user);
+        return true;
     }
 
     public void deleteUser(Long id) {

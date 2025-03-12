@@ -15,11 +15,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(nullable = false, unique = true)
     @NonNull
+    @Column(nullable = false, unique = true)
     private String username;
-    @Column(nullable = false, unique = true)
     @NonNull
+    @Column(nullable = false, unique = true)
     private String email;
     private String password;
 
@@ -28,4 +28,9 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "token_id")
     private Token token;
+
+    public User(@NonNull String username, @NonNull String email) {
+        this.username = username;
+        this.email = email;
+    }
 }
