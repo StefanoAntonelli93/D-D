@@ -5,9 +5,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name="character")
+@Table(name = "game_characters")
 @Data
-public class Character {
+public class GameCharacter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -24,13 +24,14 @@ public class Character {
     private Weapon weapon;
 
     // @AllArgsConstructor
-    public Character(String name, Integer strength, Integer life) {
+    public GameCharacter(String name, Integer strength, Integer life) {
         this.name = name;
         this.strength = strength;
-        this.life=life;
+        this.life = life;
     }
+
     // @NoArgsConstructor
-    public Character(){
+    public GameCharacter() {
 
     }
 

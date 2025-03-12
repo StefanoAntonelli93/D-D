@@ -22,7 +22,7 @@ public class TokenService {
     }
 
     public List<Token> findTokensByUsername(String username) {
-        return repo.findByUsername(username);
+        return repo.findByUser_Username(username);
 
     }
 

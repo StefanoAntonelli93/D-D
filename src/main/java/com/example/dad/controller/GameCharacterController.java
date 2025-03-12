@@ -1,4 +1,4 @@
 package com.example.dad.controller;
 
-public class CharacterController {
+public class GameCharacterController {
 }

@@ -20,7 +20,8 @@ public class Token {
     private String token;
     private ZonedDateTime valid_date;
 
-    @OneToOne(mappedBy = "token")
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
 }

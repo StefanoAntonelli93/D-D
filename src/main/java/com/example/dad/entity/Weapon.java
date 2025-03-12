@@ -20,13 +20,14 @@ public class Weapon {
     private Integer level;
 
     @OneToMany(mappedBy = "weapon")
-    private List<Character> characters;
+    private List<GameCharacter> characters;
 
     // @AllArgsConstructor
-    public Weapon (String name, Integer level){
+    public Weapon(String name, Integer level) {
         this.name = name;
         this.level = level;
     }
+
     // @NoArgsConstructor
     public Weapon() {
 
