@@ -19,4 +19,7 @@ public class Token {
     @NonNull
     private String token;
     private ZonedDateTime valid_date;
+
+    @OneToOne(mappedBy = "token")
+    private User user;
 }

@@ -3,6 +3,8 @@ package com.example.dad.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 
 @Data
 @Entity
@@ -16,6 +18,9 @@ public class Weapon {
     private Long id;
     private String name;
     private Integer level;
+
+    @OneToMany(mappedBy = "weapon")
+    private List<Character> characters;
 
     // @AllArgsConstructor
     public Weapon (String name, Integer level){

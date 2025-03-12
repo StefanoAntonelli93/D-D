@@ -19,6 +19,9 @@ public class Character {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "weapon_id")
+    private Weapon weapon;
 
     // @AllArgsConstructor
     public Character(String name, Integer strength, Integer life) {
