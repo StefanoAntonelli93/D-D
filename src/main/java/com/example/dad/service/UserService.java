@@ -38,6 +38,12 @@ public class UserService {
         return true;
     }
 
+    public boolean authenticateUser(String username, String email) {
+        User user = repo.findByUsernameAndEmail(username, email);
+        return user != null;
+    }
+
+
     public void deleteUser(Long id) {
         repo.deleteById(id);
     }

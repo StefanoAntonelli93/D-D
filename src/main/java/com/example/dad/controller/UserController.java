@@ -46,6 +46,16 @@ public class UserController {
         }
     }
 
+    @PostMapping("/user/login")
+    public String authenticateUser(@RequestBody User user) {
+        boolean isAuthenticated = service.authenticateUser(user.getUsername(), user.getEmail());
+        if (isAuthenticated) {
+            return "Login successful!";
+        } else {
+            return "Invalid username or email!";
+        }
+    }
+
     @DeleteMapping("/users/{id}")
     public void deleteUser(@PathVariable Long id) {
         service.deleteUser(id);
